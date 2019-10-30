@@ -4,7 +4,19 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+//        mavenCentral()
+//        maven {
+//            //私服的地址
+//            uri 'http://localhost:8081/repository/music-release/'
+//            //因为私服是有用户名和密码的，所以在此配置上用户名和密码
+//            credentials{
+//                username: 'admin'
+//                password: 'admin123'
+//            }
+//        }
+        maven {
+            url "https://jitpack.io"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
@@ -18,7 +30,20 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+//        mavenCentral()
+//        maven {
+//            //私服的地址
+//            uri 'http://localhost:8081/repository/music-release/'
+//            //因为私服是有用户名和密码的，所以在此配置上用户名和密码
+//            credentials{
+//                username: 'admin'
+//                password: 'admin123'
+//            }
+//        }
+
+        maven {
+            url "https://jitpack.io"
+        }
     }
 }
 
