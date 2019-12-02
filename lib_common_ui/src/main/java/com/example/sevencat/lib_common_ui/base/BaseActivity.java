@@ -11,6 +11,7 @@ public class BaseActivity extends FragmentActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //实现沉浸式效果
         StatusBarUtil.statusBarLightMode(this);
     }
 }

@@ -22,8 +22,10 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
         this.mList = datas;
     }
 
+    //初始化对应的fragment
     @Override
     public Fragment getItem(int i) {
+        //亮点：根据id去初始化相应的fragment，可以避免当有很多fragment时在首页一次全部初始化完毕，导致进首页的时候很卡顿
         int type = mList[i].getValue();
         switch(type){
             case CHANNEL.MINE_ID:
