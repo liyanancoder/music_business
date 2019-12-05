@@ -2,6 +2,7 @@ package com.example.sevencat.lib_network.response;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import com.example.sevencat.lib_network.exception.OkHttpException;
 import com.example.sevencat.lib_network.listener.DisposeDataHandle;
@@ -21,6 +22,9 @@ import okhttp3.Response;
  */
 public class CommonJsonCallback implements Callback {
 
+    protected final String RESULT_CODE = "ecode";
+    protected final int RESULT_CODE_VALUE = 0;
+    protected final String ERROR_MSG = "emsg";
     protected final String EMPTY_MSG = "";
 
     /**
@@ -46,6 +50,7 @@ public class CommonJsonCallback implements Callback {
 
     @Override
     public void onFailure(Call call, final IOException e) {
+        //此时还在非UI线程，因此要转发
         mDeliveryHandler.post(new Runnable() {
             @Override
             public void run() {

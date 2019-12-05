@@ -1,5 +1,7 @@
 package com.example.sevencat.lib_network;
 
+import com.example.sevencat.lib_network.cookie.SimpleCookieJar;
+import com.example.sevencat.lib_network.https.HttpsUtils;
 import com.example.sevencat.lib_network.listener.DisposeDataHandle;
 import com.example.sevencat.lib_network.response.CommonFileCallback;
 import com.example.sevencat.lib_network.response.CommonJsonCallback;
@@ -47,13 +49,21 @@ public class CommonOkHttpClient {
             }
         });
 
+        okhttpClientBuilder.cookieJar(new SimpleCookieJar());
         okhttpClientBuilder.connectTimeout(TIME_OUT, TimeUnit.SECONDS);
         okhttpClientBuilder.readTimeout(TIME_OUT, TimeUnit.SECONDS);
         okhttpClientBuilder.writeTimeout(TIME_OUT, TimeUnit.SECONDS);
         okhttpClientBuilder.followRedirects(true);
 
+        okhttpClientBuilder.sslSocketFactory(HttpsUtils.initSSLSocketFactory(),
+                HttpsUtils.initTrustManager());
+
         mOkHttpClient = okhttpClientBuilder.build();
 
+    }
+
+    public static OkHttpClient getOkHttpClient(){
+        return mOkHttpClient;
     }
 
     /**

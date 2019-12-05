@@ -1,5 +1,7 @@
 package com.example.sevencat.music_business.api;
 
+import android.util.Log;
+
 import com.example.sevencat.lib_network.CommonOkHttpClient;
 import com.example.sevencat.lib_network.listener.DisposeDataHandle;
 import com.example.sevencat.lib_network.listener.DisposeDataListener;
@@ -16,7 +18,8 @@ import com.example.sevencat.music_business.model.user.User;
 public class RequestCenter {
 
     static class HttpConstants {
-        private static final String ROOT_URL = "http://imooc.com/api";
+//        private static final String ROOT_URL = "http://imooc.com/api";
+        private static final String ROOT_URL = "http://39.97.122.129";
 
         /**
          * 首页请求接口

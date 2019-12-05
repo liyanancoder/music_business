@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 //apply plugin: 'maven'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'com.alibaba.arouter'
 
 def pomName = this.getName()
 def pomVersion = '1.0.0-SNAPHOT'
@@ -11,12 +13,21 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
+
+        multiDexEnabled true
 
     }
 
@@ -29,6 +40,12 @@ android {
 
 }
 
+greendao {
+    //指定数据库schema版本号，迁移等操作会用到
+    schemaVersion 1 //数据库版本号
+    daoPackage 'com.example.sevencat.lib_audio.mediaplayer.db' //dao,master类所在包
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -36,6 +53,25 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //占位主工程android原生库
+    compileOnly rootProject.depsLibs.design
+    implementation rootProject.depsLibs.recyclerview
+
+    //占位主工程的greenDao类库
+    compileOnly rootProject.depsLibs.greendao
+
+    //占位主工程arouter库
+    compileOnly(rootProject.depsLibs.arouterapi) {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor rootProject.depsLibs.aroutercompiler
+
+    implementation rootProject.depsLibs.eventbus
+    compile project(path: ':lib_image_loader')
+    compile project(path: ':lib_common_ui')
+    compile project(path: ':lib_base')
+    implementation 'com.android.support:multidex:1.0.3'
 }
 
 //uploadArchives{

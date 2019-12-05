@@ -85,7 +85,7 @@ public class CommonRequest {
         if (params != null) {
             for (Map.Entry<String, String> entry : params.urlParams.entrySet()) {
                 //参数遍历
-                urlBuilder.append(entry.getKey()).append("=").append(entry.getValue());
+                urlBuilder.append(entry.getKey()).append("=").append(entry.getValue()).append("&");
             }
         }
 
@@ -98,7 +98,7 @@ public class CommonRequest {
         }
 
         return new Request.Builder()
-                .url(url)
+                .url(urlBuilder.substring(0, urlBuilder.length() - 1))
                 .headers(mHeaderBuilder.build())
                 .get()
                 .build();

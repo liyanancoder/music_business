@@ -99,7 +99,7 @@ public class CommonFileCallback implements Callback {
             inputStream = response.body().byteStream();
             sumLength = response.body().contentLength();
             while ((length = inputStream.read(buffer)) != -1) {
-                fos.write(buffer, 0, buffer.length);
+                fos.write(buffer, 0, length);
                 currentLength += length;
                 mProgress = (int) (currentLength / sumLength * 100);
                 mDeliveryHandler.obtainMessage(PROGRESS_MESSAGE, mProgress).sendToTarget();

@@ -5,11 +5,13 @@ android {
     buildToolsVersion "29.0.1"
     defaultConfig {
         applicationId "com.example.sevencat.music_business"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -27,7 +29,12 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    compile project(path: ':lib_common_ui')
     api this.rootProject.depsLibs.magicindicator
-    compile project(path: ':lib_network')
+    implementation project(path: ':lib_common_ui')
+    implementation project(path: ':lib_network')
+    implementation project(path: ':lib_image_loader')
+    implementation project(path: ':lib_audio')
+
+    implementation rootProject.depsLibs.eventbus
+    implementation 'com.android.support:multidex:1.0.3'
 }
