@@ -19,8 +19,8 @@ public class AudioBean implements Serializable {
 
     @Generated(hash = 1701787808)
     public AudioBean(String id, @NotNull String mUrl, @NotNull String name, @NotNull String author,
-                     @NotNull String album, @NotNull String albumInfo, @NotNull String albumPic,
-                     @NotNull String totalTime) {
+            @NotNull String album, @NotNull String albumInfo, @NotNull String albumPic,
+            @NotNull String totalTime) {
         this.id = id;
         this.mUrl = mUrl;
         this.name = name;

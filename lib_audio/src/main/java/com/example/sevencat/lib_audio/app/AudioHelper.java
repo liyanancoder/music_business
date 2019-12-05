@@ -22,7 +22,7 @@ public class AudioHelper {
     public static void init(Context context) {
         mContext = context;
         //初始化本地数据库
-//        GreenDaoHelper.initDatabase();
+        GreenDaoHelper.initDatabase();
     }
 
     //外部启动MusicService方法

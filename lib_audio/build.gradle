@@ -26,9 +26,6 @@ android {
                 arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
             }
         }
-
-        multiDexEnabled true
-
     }
 
     buildTypes {
@@ -55,11 +52,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     //占位主工程android原生库
-    compileOnly rootProject.depsLibs.design
+//    compileOnly rootProject.depsLibs.design
+
     implementation rootProject.depsLibs.recyclerview
 
     //占位主工程的greenDao类库
-    compileOnly rootProject.depsLibs.greendao
+//    compileOnly rootProject.depsLibs.greendao
+    implementation 'org.greenrobot:greendao:3.2.2' // 添加库
 
     //占位主工程arouter库
     compileOnly(rootProject.depsLibs.arouterapi) {
@@ -71,7 +70,7 @@ dependencies {
     compile project(path: ':lib_image_loader')
     compile project(path: ':lib_common_ui')
     compile project(path: ':lib_base')
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:design:28.0.0'
 }
 
 //uploadArchives{

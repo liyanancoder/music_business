@@ -12,7 +12,9 @@ import com.example.sevencat.lib_audio.mediaplayer.model.Favourite;
 public class GreenDaoHelper {
     private static final String DB_BAME = "music_db";
 
+    //数据库帮助累，用来创建数据库，升级数据库
     private static DaoMaster.DevOpenHelper mHelper;
+    //最终创建好的数据库
     private static SQLiteDatabase mDb;
     //管理数据库
     private static DaoMaster mDaoMaster;
@@ -30,7 +32,7 @@ public class GreenDaoHelper {
     }
 
     /**
-     * 添加感兴趣
+     * 添加收藏
      */
     public static void addFavourite(AudioBean audioBean) {
         FavouriteDao dao = mDaoSession.getFavouriteDao();
@@ -41,7 +43,7 @@ public class GreenDaoHelper {
     }
 
     /**
-     * 移除感兴趣
+     * 移除收藏
      */
     public static void removeFavourite(AudioBean audioBean) {
         FavouriteDao dao = mDaoSession.getFavouriteDao();
@@ -51,7 +53,7 @@ public class GreenDaoHelper {
     }
 
     /**
-     * 查找感兴趣
+     * 查询一个收藏
      */
     public static Favourite selectFavourite(AudioBean audioBean) {
         FavouriteDao dao = mDaoSession.getFavouriteDao();

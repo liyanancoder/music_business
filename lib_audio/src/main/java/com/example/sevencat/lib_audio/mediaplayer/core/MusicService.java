@@ -30,10 +30,16 @@ import static com.example.sevencat.lib_audio.mediaplayer.view.NotificationHelper
  */
 public class MusicService extends Service implements NotificationHelper.NotificationHelperListener {
 
+    /**
+     * 常量区
+     */
     private static String DATA_AUDIOS = "AUDIOS";
     //actions
     private static String ACTION_START = "ACTION_START";
 
+    /**
+     * data
+     */
     private ArrayList<AudioBean> mAudioBeans;
 
     private NotificationReceiver mReceiver;
@@ -68,7 +74,7 @@ public class MusicService extends Service implements NotificationHelper.Notifica
             //开始播放
             playMusic();
             //初始化前台Notification
-//            NotificationHelper.getInstance().init(this);
+            NotificationHelper.getInstance().init(this);
         }
         return super.onStartCommand(intent, flags, startId);
     }

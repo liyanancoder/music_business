@@ -3,6 +3,7 @@ package com.example.sevencat.lib_audio.mediaplayer.view;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
@@ -18,7 +19,6 @@ import com.example.sevencat.lib_audio.mediaplayer.events.AudioLoadEvent;
 import com.example.sevencat.lib_audio.mediaplayer.events.AudioPlayModeEvent;
 import com.example.sevencat.lib_audio.mediaplayer.model.AudioBean;
 import com.example.sevencat.lib_audio.mediaplayer.view.adapter.MusicListAdapter;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

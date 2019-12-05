@@ -22,6 +22,7 @@ import com.example.sevencat.lib_image_loader.ImageLoaderManager;
  * 音乐NotificationHelper
  * 1、完成notification的创建和初始化
  * 2、对外提供表更新notification的方法
+ * （在系统进程中）
  */
 public class NotificationHelper {
 

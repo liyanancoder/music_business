@@ -96,9 +96,10 @@ public class ImageLoaderManager {
                 .asBitmap()
                 .load(url)
                 .apply(initCommonRequestOption())
-                .into(new SimpleTarget<Bitmap>() {
+                .into(new SimpleTarget<Bitmap>() {//设置宽高
                     @Override
-                    public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
+                    public void onResourceReady(@NonNull Bitmap resource,
+                                                @Nullable Transition<? super Bitmap> transition) {
                         final Bitmap res = resource;
                         Observable.just(resource)
                                 .map(new Function<Bitmap, Drawable>() {
@@ -118,7 +119,6 @@ public class ImageLoaderManager {
                                         group.setBackground(drawable);
                                     }
                                 });
-
                     }
                 });
     }

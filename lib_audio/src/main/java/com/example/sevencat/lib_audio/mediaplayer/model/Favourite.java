@@ -22,14 +22,10 @@ public class Favourite {
     //一条收藏记录唯一对应一条实体
     @ToOne(joinProperty = "audioId")
     AudioBean audioBean;
-    /**
-     * Used to resolve relations
-     */
+    /** Used to resolve relations */
     @Generated(hash = 2040040024)
     private transient DaoSession daoSession;
-    /**
-     * Used for active entity operations.
-     */
+    /** Used for active entity operations. */
     @Generated(hash = 1743949577)
     private transient FavouriteDao myDao;
 
@@ -62,9 +58,7 @@ public class Favourite {
     @Generated(hash = 249106606)
     private transient String audioBean__resolvedKey;
 
-    /**
-     * To-one relationship, resolved on first access.
-     */
+    /** To-one relationship, resolved on first access. */
     @Generated(hash = 281167394)
     public AudioBean getAudioBean() {
         String __key = this.audioId;
@@ -83,9 +77,7 @@ public class Favourite {
         return audioBean;
     }
 
-    /**
-     * called by internal mechanisms, do not call yourself.
-     */
+    /** called by internal mechanisms, do not call yourself. */
     @Generated(hash = 910180402)
     public void setAudioBean(@NotNull AudioBean audioBean) {
         if (audioBean == null) {

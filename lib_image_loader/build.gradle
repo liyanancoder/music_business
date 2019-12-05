@@ -33,8 +33,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     //占位主工程rxjava
-    compileOnly rootProject.depsLibs.rxjava
-    compileOnly rootProject.depsLibs.rxandroid
+//    compileOnly rootProject.depsLibs.rxjava
+//    compileOnly rootProject.depsLibs.rxandroid
 
 }
