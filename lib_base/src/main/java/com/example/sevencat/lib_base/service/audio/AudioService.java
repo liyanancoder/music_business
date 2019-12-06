@@ -1,4 +1,4 @@
-package com.example.sevencat.lib_base;
+package com.example.sevencat.lib_base.service.audio;
 
 import com.alibaba.android.arouter.facade.template.IProvider;
 

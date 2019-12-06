@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.example.sevencat.lib_audio.mediaplayer.core.AudioController;
-import com.example.sevencat.lib_base.AudioService;
+import com.example.sevencat.lib_base.service.audio.AudioService;
 
 /**
  * AudioService实现类

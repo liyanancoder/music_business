@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.alibaba.arouter'
 
 android {
     compileSdkVersion 28
@@ -12,6 +13,13 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         multiDexEnabled true
+
+        //ARouter配置
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
     }
     buildTypes {
         release {
@@ -41,4 +49,10 @@ dependencies {
     implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
     compile project(path: ':lib_video')
 //    implementation rootProject.depsLibs.recyclerview
+
+    //arouter库
+    implementation(rootProject.depsLibs.arouterapi) {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor rootProject.depsLibs.aroutercompiler
 }

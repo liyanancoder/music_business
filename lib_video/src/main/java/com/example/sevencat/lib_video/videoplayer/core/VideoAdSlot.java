@@ -7,7 +7,7 @@ import android.widget.RelativeLayout;
 
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.example.sevencat.lib_base.AudioService;
+import com.example.sevencat.lib_base.service.audio.AudioService;
 import com.example.sevencat.lib_video.videoplayer.core.view.CustomVideoView;
 import com.example.sevencat.lib_video.videoplayer.core.view.VideoFullDialog;
 import com.example.sevencat.lib_video.videoplayer.utils.Utils;
@@ -32,7 +32,7 @@ public class VideoAdSlot implements CustomVideoView.ADVideoPlayerListener {
     private SDKSlotListener mSlotListener;
 
     public VideoAdSlot(String adInstance, SDKSlotListener slotLitener) {
-//        ARouter.getInstance().inject(this);
+        ARouter.getInstance().inject(this);
         mXAdInstance = adInstance;
         mSlotListener = slotLitener;
         mParentView = slotLitener.getAdParent();

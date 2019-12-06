@@ -45,5 +45,6 @@ dependencies {
     }
     annotationProcessor rootProject.depsLibs.aroutercompiler
 
+    //业务基础库占位
     compileOnly project(':lib_base')
 }
