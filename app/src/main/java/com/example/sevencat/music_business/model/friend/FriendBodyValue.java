@@ -1,5 +1,6 @@
 package com.example.sevencat.music_business.model.friend;
 
+import com.example.sevencat.lib_audio.mediaplayer.model.AudioBean;
 import com.example.sevencat.music_business.model.BaseModel;
 
 import java.util.ArrayList;
@@ -14,5 +15,5 @@ public class FriendBodyValue extends BaseModel {
     public String videoUrl;
     public String zan;
     public String msg;
-//    public AudioBean audioBean;
+    public AudioBean audioBean;
 }

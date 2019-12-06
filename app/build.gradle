@@ -29,7 +29,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    api this.rootProject.depsLibs.magicindicator
+//    api this.rootProject.depsLibs.magicindicator
     implementation project(path: ':lib_common_ui')
     implementation project(path: ':lib_network')
     implementation project(path: ':lib_image_loader')
@@ -37,4 +37,8 @@ dependencies {
 
     implementation rootProject.depsLibs.eventbus
     implementation 'com.android.support:multidex:1.0.3'
+    api 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+    compile project(path: ':lib_video')
+//    implementation rootProject.depsLibs.recyclerview
 }

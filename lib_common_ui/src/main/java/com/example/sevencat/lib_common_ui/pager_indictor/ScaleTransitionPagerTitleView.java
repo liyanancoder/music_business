@@ -4,6 +4,9 @@ import android.content.Context;
 
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ColorTransitionPagerTitleView;
 
+/**
+ * 带颜色渐变和缩放的指示器标题
+ */
 public class ScaleTransitionPagerTitleView extends ColorTransitionPagerTitleView {
     private float mMinScale = 0.9f;
 

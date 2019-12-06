@@ -32,6 +32,7 @@ import com.example.sevencat.lib_audio.mediaplayer.model.AudioBean;
 import com.example.sevencat.lib_audio.mediaplayer.utils.Utils;
 import com.example.sevencat.lib_common_ui.base.BaseActivity;
 import com.example.sevencat.lib_image_loader.ImageLoaderManager;
+import com.example.sevencat.lib_share.ShareDialog;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -283,14 +284,14 @@ public class MusicPlayerActivity extends BaseActivity {
      * 分享给好友
      */
     private void shareMusic(String url, String name) {
-//        ShareDialog dialog = new ShareDialog(this, false);
-//        dialog.setShareType(5);
-//        dialog.setShareTitle(name);
-//        dialog.setShareTitleUrl(url);
-//        dialog.setShareText("慕课网");
-//        dialog.setShareSite("imooc");
-//        dialog.setShareSiteUrl("http://www.imooc.com");
-//        dialog.show();
+        ShareDialog dialog = new ShareDialog(this, false);
+        dialog.setShareType(5);
+        dialog.setShareTitle(name);
+        dialog.setShareTitleUrl(url);
+        dialog.setShareText("云音乐");
+        dialog.setShareSite("music");
+        dialog.setShareSiteUrl("http://www.baidu.com");
+        dialog.show();
     }
 }
 
